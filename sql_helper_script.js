@@ -19,11 +19,20 @@ VALUES ('${email}', '2020-11-19', 'RMC');
     queryStart = queryStart.replace(/,([^,]*)$/,")")
 
     console.log(queryStart + "\n" + queryMiddle)
-    console.log(`count = ${count}`)
+    console.log(`count = ${count}\n`)
 }
 
 
+const emails = []
 
-// sql_insert_helper(emails8)
+// here you can set how large you want each query to be
+let chunkSize = 30;
+
+for (var i = 0; i < emails.length; i += chunkSize){
+    let chunk = emails.slice(i, i + chunkSize)
+
+    sql_insert_helper(chunk)
+}
+
 
 
