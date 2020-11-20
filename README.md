@@ -16,4 +16,6 @@ First Step: Turn list of emails into a useable form for an array.
 
 Next Step: Copy the content of the file and paste it into the empty emails array at the bottom of the script
 
+Next Step: Set the chuck size if you want to chunk out the sql queries to a specified size
+
 Finally: Run 'node sql_helper_script.js' to get your SQL query output as well as the count of affected items for quick sanity check validation after running command
