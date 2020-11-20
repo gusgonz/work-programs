@@ -6,23 +6,22 @@ WHERE EMAIL_ADDRESS IN (`
     count= 0
 
     for (email of emails) {
-        queryStart += `\n'${email}',`
-        
         let insertQuery = `INSERT INTO DB2PROD.NOEMAIL_LIST
 VALUES ('${email}', '2020-11-19', 'RMC');
-`
+`   
+        queryStart += `\n'${email}',`
         queryMiddle += insertQuery
         count += 1
     }
 
-    
+    // Replace last comma with a parenthesis
     queryStart = queryStart.replace(/,([^,]*)$/,")")
 
     console.log(queryStart + "\n" + queryMiddle)
     console.log(`count = ${count}\n`)
 }
 
-
+// array of emails to put into the query
 const emails = []
 
 // here you can set how large you want each query to be
